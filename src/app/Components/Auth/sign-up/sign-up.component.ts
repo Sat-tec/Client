@@ -41,7 +41,7 @@ export class SignUpComponent {
       next: (response) => {
           localStorage.setItem('authToken', response.accessToken); // Store token
           alert('Sign-up successful!');
-          this.router.navigate(['/dashboard']); // Navigate to dashboard on success
+          this.router.navigate(['/signin']); // Navigate to dashboard on success
       },
       error: (error) => {
           console.error('Sign-in failed', error);

@@ -15,7 +15,7 @@ export const routes: Routes = [
     },
     {
         path:"signin",
-        component: SignInComponent
+        component: SignInComponent,
     },
 
     {
@@ -37,13 +37,15 @@ export const routes: Routes = [
             {
                 path:'dashboard2',
                 component: Dashboard2Component,
-                title: 'Dashboard 2'
+                title: 'Dashboard 2',
+                canActivate: [AuthGuard]
             },
 
             {
                 path:'dashboard3',
                 component: Dashboard3Component,
-                title: 'Dashboard 2'
+                title: 'Dashboard 2',
+                canActivate: [AuthGuard]
             },
         ]
     },

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,21 +10,8 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService) {} // Inject AuthService here
   signOut() {
-    // Optionally call the sign-out endpoint
-    // this.authService.signOut().subscribe({
-    //     next: (response) => {
-    //         console.log(response.message);
-    //     },
-    //     error: (error) => {
-    //         console.error('Sign-out failed', error);
-    //     }
-    // });
-
-    // Remove token from local storage
-    localStorage.removeItem('authToken');
-    
-    // Redirect to login or home page
-    this.router.navigate(['/signin']);
-}}
+    this.authService.signOut();
+  }
+}
