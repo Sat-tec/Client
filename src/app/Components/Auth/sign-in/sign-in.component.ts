@@ -17,6 +17,11 @@ export class SignInComponent {
   constructor(private authService: AuthService, private router: Router) { }
 
   onSubmit() {
+    if (!this.email || !this.password) {
+      alert('Fields are empty!');
+      return; // Prevent further execution
+    }
+
     const credentials = {
       email: this.email,
       password: this.password
@@ -37,16 +42,4 @@ export class SignInComponent {
       }
     });
 
-  //   this.authService.signUp(credentials).subscribe({
-  //     next: (response) => {
-  //         localStorage.setItem('authToken', response.accessToken); // Store token
-  //         // alert('Sign-up successful!'); // Alert on successful sign-up
-  //         this.router.navigate(['/dashboard']); // Navigate to dashboard on success
-  //     },
-  //     error: (error) => {
-  //         console.error('Sign-in failed', error);
-  //         // alert('Sign-up failed: ' + (error.message || 'An unknown error occurred.')); // Alert on error
-  //     }
-  // });
-  
   }}

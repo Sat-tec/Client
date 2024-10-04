@@ -22,6 +22,11 @@ export class SignUpComponent {
 
   // This function will be triggered on form submission
   onSubmit() {
+    if (!this.email || !this.password || !this.password || !this.confpassw) {
+      alert('Fields are empty!');
+      return; // Prevent further execution
+    }
+
     // Check if password and confirm password match
     if (this.password !== this.confpassw) {
       console.error('Passwords do not match');
