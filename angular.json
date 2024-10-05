@@ -28,7 +28,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/static",
+                "input": "public",
                 "output": "/"
               }
             ],
