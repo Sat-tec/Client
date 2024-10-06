@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>{{ data.header }}</h2>
+<mat-dialog-content>
+  <form>
+    <!-- Class Title -->
+    <mat-form-field appearance="fill">
+      <mat-label>{{ data.fieldName }}</mat-label>
+      <input matInput [(ngModel)]="data.classTitle" name="classTitle" />
+    </mat-form-field>
+
+    <!-- Sequence Order -->
+    <mat-form-field appearance="fill">
+      <mat-label>Sequence Order</mat-label>
+      <input matInput type="number" [(ngModel)]="data.sequenOrder" name="sequenOrder" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+
+<mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Cancel</button>
+  <button mat-button (click)="save()">Save</button>
+</mat-dialog-actions>
